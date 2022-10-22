@@ -15,9 +15,18 @@ spring:
         # https://stackoverflow.com/questions/21257819/what-is-the-difference-between-hibernate-jdbc-fetch-size-and-hibernate-jdbc-batc
         jdbc.batch_size: 20
   datasource:
-    url: jdbc:h2:mem:rv
-    username: n
-    password: s
+    url: jdbc:h2:mem:userInformation
+    #    tcp: jdbc:h2:tcp://localhost:9092/mem:voting
+    # Absolute path
+    #    url: jdbc:h2:C:/projects/bootjava/restorant-voting/db/voting
+    #    tcp: jdbc:h2:tcp://localhost:9092/C:/projects/bootjava/restorant-voting/db/voting
+    # Relative path form current dir
+    #    url: jdbc:h2:./db/voting
+    # Relative path from home
+    #    url: jdbc:h2:~/voting
+    #    tcp: jdbc:h2:tcp://localhost:9092/~/voting
+    username: admin
+    password: admin
 
 # Jackson Serialization Issue Resolver
   jackson.visibility:
