@@ -13,7 +13,6 @@ import org.springframework.util.Assert;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
-import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -31,8 +30,8 @@ import java.time.LocalDate;
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
 @Table(name = "users", uniqueConstraints = {
         @UniqueConstraint(name = "uniq_lNma_fName_patronomic_dateBirth",
-                columnNames = {"last_name", "first_name","patronymic","date_birth"})})
-public class User implements Persistable<Integer> , Serializable {
+                columnNames = {"last_name", "first_name", "patronymic", "date_birth"})})
+public class User implements Persistable<Integer>, Serializable {
 
     @ToString.Include
     @Id
@@ -68,7 +67,7 @@ public class User implements Persistable<Integer> , Serializable {
     @Size(max = 128)
     private String photo;
 
-   // @NotBlank
+    // @NotBlank
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @JsonDeserialize(using = JsonDeserializers.PasswordDeserializer.class)
     @Column(name = "password", nullable = false)

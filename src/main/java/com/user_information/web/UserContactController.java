@@ -5,6 +5,7 @@ import com.user_information.model.User;
 import com.user_information.repository.UserRepository;
 import com.user_information.utils.UserUtils;
 import com.user_information.utils.ValidationUtil;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(value = UserContactController.URL_USER_CONTACT)
 @AllArgsConstructor
 @Slf4j
+@Tag(name = "User contact Controller")
 public class UserContactController {
     public static final String URL_USER_CONTACT = "/api/contact/user/";
     UserRepository userRepository;

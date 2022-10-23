@@ -5,6 +5,7 @@ import com.user_information.model.User;
 import com.user_information.repository.UserRepository;
 import com.user_information.utils.UserUtils;
 import com.user_information.utils.ValidationUtil;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -19,8 +20,9 @@ import java.net.URI;
 @RequestMapping(value = UserDetailsInformationController.URL_USER_PROFILE)
 @Slf4j
 @AllArgsConstructor
+@Tag(name = "User details information Controller")
 public class UserDetailsInformationController {
-    public static final String URL_USER_PROFILE = "/api/profile/";
+    public static final String URL_USER_PROFILE = "/api/details-informations/";
     UserRepository userRepository;
 
     /**

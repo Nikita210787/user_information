@@ -2,6 +2,7 @@ package com.user_information.web;
 
 import com.user_information.model.User;
 import com.user_information.repository.UserRepository;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,6 @@ import java.util.List;
 @RequestMapping(value = RootController.URL_ROOT)
 @AllArgsConstructor
 @Slf4j
-//@Tag(name = "Root controller")
 public class RootController {
     public static final String URL_ROOT = "/api/users";
 

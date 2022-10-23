@@ -23,7 +23,7 @@ spring:
     rest:
       defaultPageSize: 20
       return-body-on-create: true
-      basePath: /api
+     # basePath: /api
  # I'am BasicAuthWebSecurityConfig for Example . That will work to
  # security:
  #   user:
@@ -48,6 +48,6 @@ server.servlet:
     enabled: true # Enable http encoding support
     force: true
 
-#springdoc:
-#  swagger-ui:
-#    tagsSorter: alpha
+springdoc:
+  swagger-ui:
+    tagsSorter: alpha
