@@ -15,15 +15,13 @@ public class UserInformationApplication implements ApplicationRunner {
 
     private final UserRepository userRepository;
     public static void main(String[] args) {
-        try {
             SpringApplication.run(UserInformationApplication.class, args);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
     }
     @Override
     public void run(ApplicationArguments args) {
-                System.out.println(userRepository.findAll());
-            }
+    //   System.out.println(userRepository.findByLastNameIgnoreCase("Sychev"));
+     //   System.out.println(userRepository.findByEmailIgnoreCase("admin@gmail.com"));
+        System.out.println(userRepository.findAll());
+    }
 
 }

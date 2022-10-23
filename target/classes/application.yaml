@@ -6,7 +6,7 @@ spring:
     # https://stackoverflow.com/a/67678945/548473
     defer-datasource-initialization: true
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     properties:
       #  http://docs.jboss.org/hibernate/orm/5.3/userguide/html_single/Hibernate_User_Guide.html#configurations
       hibernate:
@@ -16,31 +16,38 @@ spring:
         jdbc.batch_size: 20
   datasource:
     url: jdbc:h2:mem:userInformation
-    #    tcp: jdbc:h2:tcp://localhost:9092/mem:voting
-    # Absolute path
-    #    url: jdbc:h2:C:/projects/bootjava/restorant-voting/db/voting
-    #    tcp: jdbc:h2:tcp://localhost:9092/C:/projects/bootjava/restorant-voting/db/voting
-    # Relative path form current dir
-    #    url: jdbc:h2:./db/voting
-    # Relative path from home
-    #    url: jdbc:h2:~/voting
-    #    tcp: jdbc:h2:tcp://localhost:9092/~/voting
+
     username: admin
     password: admin
+  data:
+    rest:
+      defaultPageSize: 20
+      return-body-on-create: true
+      basePath: /api
+ # I'am BasicAuthWebSecurityConfig for Example . That will work to
+ # security:
+ #   user:
+ #     name: admin
+ #     password: admin
+ #    roles: ADMIN
 
-# Jackson Serialization Issue Resolver
-  jackson.visibility:
-    field: any
-    getter: none
-    setter: none
-    is-getter: none
-
+  # Jackson Serialization Issue Resolver
+ # jackson.visibility:
+  #  field: any
+   # getter: none
+   # setter: none
+   # is-getter: none
+logging:
+  level:
+    root: WARN
+    ru.restaurant_voting: DEBUG
+    org.springframework.security.web.FilterChainProxy: DEBUG
 server.servlet:
   encoding:
     charset: UTF-8 # Charset of HTTP requests and responses. Added to the "Content-Type" header if not set explicitly
     enabled: true # Enable http encoding support
     force: true
 
-springdoc:
-  swagger-ui:
-    tagsSorter: alpha
+#springdoc:
+#  swagger-ui:
+#    tagsSorter: alpha
